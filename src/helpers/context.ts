@@ -1,1 +1,1 @@
-export const sysname: string = 'home'
+export const HOME: string = 'home'

@@ -1,5 +1,13 @@
 <template>
-    <div>主页面</div>
+    <v-layout>
+        <v-sider></v-sider>
+        <v-layout>
+            <v-header></v-header>
+            <v-content>
+                <router-view/>
+            </v-content>
+        </v-layout>
+    </v-layout>
 </template>
 
 <script lang="ts">
