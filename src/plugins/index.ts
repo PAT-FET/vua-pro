@@ -3,6 +3,7 @@ import vua from 'vua'
 import 'vua/dist/vua.css'
 import zhHans from 'vua/src/locale/zh-Hans'
 import { Auth, Http } from '@pat-fet/web-vue-utils'
+import { login, logout, loadPrinciple } from '@/api/auth'
 
 export default function install (): void {
   Vue.use(vua, {
@@ -11,8 +12,12 @@ export default function install (): void {
     }
   })
 
-  Vue.use(Auth)
+  Vue.use(Auth, {
+    login,
+    logout,
+    loadPrinciple
+  })
   Vue.use(Http, {
-    // baseURL: 'https://www.easy-mock.com/mock/5d19fe9f35e5413fe189fec3/api'
+    baseURL: 'http://localhost:3000'
   })
 }

@@ -1,21 +1,56 @@
 <template>
-    <v-layout>
-        <v-sider></v-sider>
+    <v-layout :class="[$style.container]">
+        <v-sider>
+            <app-sider></app-sider>
+        </v-sider>
         <v-layout>
-            <v-header></v-header>
-            <v-content>
+            <v-header :class="[$style.header]" class="shadow-1-down">
+                <app-header></app-header>
+            </v-header>
+            <v-content :class="[$style.content]">
                 <router-view/>
             </v-content>
+            <v-footer :class="[$style.footer]">
+                <app-footer></app-footer>
+            </v-footer>
         </v-layout>
     </v-layout>
 </template>
 
 <script lang="ts">
 
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Provide } from 'vue-property-decorator'
+import AppHeader from './app-header/index.vue'
+import AppSider from './app-sider/index.vue'
+import AppFooter from './app-footer/index.vue'
 
-@Component
+@Component({
+  components: { AppHeader, AppSider, AppFooter }
+})
 export default class Layout extends Vue {
-
 }
 </script>
+
+<style lang="scss" module>
+.container {
+    background-color: #eff4f5;
+}
+
+.header {
+    height: 4rem;
+    padding: 0;
+    background-color: #fff;
+}
+
+.content {
+    overflow: auto;
+    height: calc(100vh - 9rem);
+    margin: 1rem;
+    background-color: #fff;
+}
+
+.footer {
+    height: 3rem;
+    padding: 0;
+}
+</style>
