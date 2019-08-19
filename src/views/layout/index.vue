@@ -33,20 +33,20 @@ export default class Layout extends Vue {
 
 <style lang="scss" module>
 .container {
-    background-color: #eff4f5;
+    background-color: var(--bg-color-1);
 }
 
 .header {
     height: 4rem;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 
 .content {
     overflow: auto;
     height: calc(100vh - 9rem);
     margin: 1rem;
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 
 .footer {

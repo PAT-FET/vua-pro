@@ -39,8 +39,8 @@ export default class AppSider extends Vue {
 .container {
     height: 100vh;
     overflow: auto;
-    background-color: rgb(0, 21, 41);
-    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+    background-color: var(--bg-color);
+    box-shadow: 2px 0 6px var(--bg-color-2);
     position: relative;
 }
 
@@ -49,11 +49,11 @@ export default class AppSider extends Vue {
     bottom: 2rem;
     left: 50%;
     font-size: 1.5rem;
-    color: #999;
+    // color: #999;
     transition: all .3s;
     transform: translateX(-50%);
     &:hover {
-      color: #fff;
+      color: var(--primary-base);
       cursor: pointer;
       &>* {
         transform: scale(1.1);

@@ -1,19 +1,18 @@
 <template>
-<div :class="[$style.container]" class="mx-2">
-    <v-dropdown placement="bottom-end" :class="[$style.dropdown]">
+<div :class="[$style.container]">
+    <v-dropdown placement="bottom-end" :class="[$style.dropdown]" trigger="click">
         <div :class="[$style.reference]">
             <div style="height: auto;" class="px-2">
-                <v-avatar type="image"><img src="@/assets/avatar.png" /></v-avatar>
-                <span class="ml-2">{{username}}</span>
+                <v-icon type="global" class="ft-lg"></v-icon>
             </div>
         </div>
         <v-dropdown-menu slot="dropdown">
-            <v-dropdown-item class="w-8">
-                <v-icon type="user"></v-icon> <span class="ml-3">个人中心</span>
+            <v-dropdown-item >
+                <v-switch v-model="dark" size="sm" @click.native.stop=""></v-switch> <span class="ml-2">明/暗模式</span>
             </v-dropdown-item>
             <v-dropdown-item divider></v-dropdown-item>
-            <v-dropdown-item @click.native="onLogout">
-                <v-icon type="logout"></v-icon> <span class="ml-3">退出登录</span>
+            <v-dropdown-item class="w-8">
+                <input type="color" @click.stop="" v-model="primary"> <span class="text-primary ml-2"> 主题色 </span>
             </v-dropdown-item>
         </v-dropdown-menu>
     </v-dropdown>
@@ -25,13 +24,21 @@
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component
-export default class GlobalAction extends Vue {
-  get username () {
-    return this.$auth.username
+export default class ThemeChooser extends Vue {
+  get dark () {
+    return !!this.$vua.dark
   }
 
-  onLogout () {
-    this.$auth.logout()
+  set dark (dark: boolean) {
+    this.$vua.dark = dark
+  }
+
+  get primary () {
+    return this.$vua.theme.primary || ''
+  }
+
+  set primary (value: string) {
+    this.$vua.theme.primary = value
   }
 }
 </script>

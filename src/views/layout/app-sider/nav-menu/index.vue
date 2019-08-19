@@ -45,8 +45,8 @@ export default class NavMenu extends Vue {
         mode: 'inline',
         defaultActive: this.activeIndex,
         uniqueOpened: true,
-        collapse: !this.expand,
-        cssVariable: this.cssVariable
+        collapse: !this.expand
+        // cssVariable: this.cssVariable
       }
     }
     return h('v-menu', data, this.generateList(h, this.data || menus))
@@ -88,24 +88,24 @@ export default class NavMenu extends Vue {
     })
   }
 
-  cssVariable: MenuCssVariable = {
-    menuBgColor: 'rgb(0, 21, 41)',
-    menuBorderColor: 'rgb(0, 21, 41)',
-    // group
-    menuGroupTextColor: '#999',
-    // sub
-    menuSubTitleTextColor: 'rgba(255, 255, 255, 0.65)',
-    menuSubTitleHoverTextColor: '#fff',
-    menuSubTitleActiveTextColor: '#fff',
-    // item
-    menuItemTextColor: 'rgba(255, 255, 255, 0.65)',
-    menuItemDisabledTextColor: '#aaa',
-    menuItemHoverTextColor: '#fff',
-    menuItemActiveTextColor: '#fff',
-    menuItemBgColor: 'rgb(0, 12, 23)',
-    menuItemActiveBgColor: 'primary',
-    menuItemActiveBorderColor: 'primary'
-  }
+  // cssVariable: MenuCssVariable = {
+  //   menuBgColor: 'rgb(0, 21, 41)',
+  //   menuBorderColor: 'rgb(0, 21, 41)',
+  //   // group
+  //   menuGroupTextColor: '#999',
+  //   // sub
+  //   menuSubTitleTextColor: 'rgba(255, 255, 255, 0.65)',
+  //   menuSubTitleHoverTextColor: '#fff',
+  //   menuSubTitleActiveTextColor: '#fff',
+  //   // item
+  //   menuItemTextColor: 'rgba(255, 255, 255, 0.65)',
+  //   menuItemDisabledTextColor: '#aaa',
+  //   menuItemHoverTextColor: '#fff',
+  //   menuItemActiveTextColor: '#fff',
+  //   menuItemBgColor: 'rgb(0, 12, 23)',
+  //   menuItemActiveBgColor: 'primary',
+  //   menuItemActiveBorderColor: 'primary'
+  // }
 }
 
 </script>

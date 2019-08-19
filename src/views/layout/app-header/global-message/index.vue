@@ -1,5 +1,5 @@
 <template>
-<div :class="[$style.container]" class="px-3 mx-2">
+<div :class="[$style.container]" class="px-2 mx-2">
     <v-badge :value="100" :max="99">
         <v-icon type="bell" class="text-base ft-24"></v-icon>
     </v-badge>
@@ -20,8 +20,11 @@ export default class GlobalMessage extends Vue {
 
 .container {
     height: 100%;
+    display: flex;
+    align-items: center;
+    transition: background-color .35s ease;
     &:hover {
-        background: var(--bg-color-2);
+        background: var(--bg-color-1);
         cursor: pointer;
     }
 }

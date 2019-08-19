@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-input v-model.trim="value" placeholder="搜索" suffix="search" :dark="{}"></v-input>
+    <v-input v-model.trim="value" placeholder="搜索" suffix="search"></v-input>
 </div>
 </template>
 
