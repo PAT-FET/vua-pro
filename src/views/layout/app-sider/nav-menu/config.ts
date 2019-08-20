@@ -1,3 +1,5 @@
+import { HOME } from '@/helpers/context'
+
 export interface MenuOption {
     name: string
     icon?: string
@@ -10,18 +12,18 @@ export const menus: Array<MenuOption> = [
   {
     name: 'Dashboard',
     icon: 'rocket',
-    pid: 'tmr.dashboard',
+    pid: `${HOME}.dashboard`,
     link: '/dashboard'
   },
   {
-    name: '客户总表',
-    icon: 'user',
-    pid: 'tmr.customer',
+    name: '系统管理',
+    icon: 'setting',
+    pid: `${HOME}.system`,
     children: [
       {
-        name: '客户查询',
-        pid: 'tmr.customer.query',
-        link: '/customer/query'
+        name: '用户管理',
+        pid: `${HOME}.system.user`,
+        link: '/system/user'
       }
     ]
   }

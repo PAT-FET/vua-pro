@@ -81,11 +81,18 @@ export default class NavMenu extends Vue {
   }
 
   filterByAcl (items: Array<MenuOption>): Array<MenuOption> {
+    const vm = this
     if (!Array.isArray(items) || items.length < 1) return []
     return items.filter((item: MenuOption) => {
       if (!item.pid) return true
-      return this.$auth.access(item.pid)
+      let has = access(item.pid)
+      return has
     })
+
+    function access (pid: string) {
+      const authorities = vm.$auth.principle.authorities || []
+      return authorities.some((v: any) => v.pid === pid)
+    }
   }
 
   // cssVariable: MenuCssVariable = {

@@ -12,6 +12,9 @@ export default [
     authorities: [
       {
         pid: `${prefix}`
+      },
+      {
+        pid: `${prefix}.dashboard`
       }
     ]
   },
@@ -28,6 +31,12 @@ export default [
       },
       {
         pid: `${prefix}.dashboard`
+      },
+      {
+        pid: `${prefix}.system`
+      },
+      {
+        pid: `${prefix}.system.user`
       }
     ]
   }

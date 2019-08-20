@@ -14,6 +14,13 @@ const routes: Array<RouteConfig> = [
         name: 'dashboard',
         component: () => import('@/views/dashboard/index.vue'),
         meta: { pid: `${HOME}.dashboard`, cname: '仪表盘' }
+      },
+      // 系统管理
+      {
+        path: 'system/user',
+        name: 'system/user',
+        component: () => import('@/views/system/user/index.vue'),
+        meta: { pid: `${HOME}.system.user`, cname: '用户管理' }
       }
     ]
   },
